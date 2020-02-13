@@ -2,6 +2,9 @@ kind: pipeline
 type: kubernetes
 name: bender
 
+metadata:
+  namespace: bender
+
 steps:
 - name: greeting
   image: alpine
