@@ -13,7 +13,11 @@ steps:
   image: alpine
   environment:
     <<: *env
+    bye: "bye"
+    yes: ${hello}
   commands:
   - echo hello
   - echo world
   - echo $${hello}
+  - echo $${bye}
+  - echo $${yes}
