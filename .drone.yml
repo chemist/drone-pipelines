@@ -1,5 +1,7 @@
-environment: &env
-  hello: "hello all"
+global:
+  environment: &env
+    hello: "hello all"
+    commit: ${DRONE_COMMIT_SHA:0:8}
 
 kind: pipeline
 type: kubernetes
@@ -14,10 +16,9 @@ steps:
   environment:
     <<: *env
     bye: "bye"
-    yes: $${hello}
   commands:
   - echo hello
   - echo world
   - echo $${hello}
   - echo $${bye}
-  - echo $${yes}
+  - echo $${commit}
