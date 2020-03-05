@@ -1,6 +1,5 @@
-global-variables:
-  environment: &env
-    hello: "hello all"
+environment: &env
+  hello: "hello all"
 
 kind: pipeline
 type: kubernetes
