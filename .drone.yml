@@ -5,10 +5,14 @@ name: bender
 metadata:
   namespace: bender
 
+environment:
+  hello: "hello all"
+  
+
 steps:
 - name: greeting
   image: alpine
   commands:
   - echo hello
   - echo world
-  - echo world
+  - echo ${hello}
