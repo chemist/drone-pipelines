@@ -1,13 +1,13 @@
+global-variables:
+  environment: &env
+    hello: "hello all"
+
 kind: pipeline
 type: kubernetes
 name: bender
 
 metadata:
   namespace: bender
-
-environment:
-  hello: "hello all"
-  
 
 steps:
 - name: greeting
@@ -16,3 +16,5 @@ steps:
   - echo hello
   - echo world
   - echo ${hello}
+  environment:
+    <<: *env
