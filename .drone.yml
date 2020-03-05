@@ -14,7 +14,7 @@ steps:
   environment:
     <<: *env
     bye: "bye"
-    yes: ${hello}
+    yes: $${hello}
   commands:
   - echo hello
   - echo world
