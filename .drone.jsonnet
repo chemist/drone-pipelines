@@ -1,10 +1,4 @@
 {
-  global: {
-    environment: {
-      commit: '${DRONE_COMMIT_SHA:0:8}',
-      hello: 'hello all',
-    },
-  },
   kind: 'pipeline',
   metadata: {
     namespace: 'bender',
