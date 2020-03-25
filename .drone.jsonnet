@@ -1,26 +1,24 @@
-[
-  {
-    kind: 'pipeline',
-    name: 'bender',
-    type: 'kubernetes',
-    steps: [
+{
+   "kind": "pipeline",
+   "name": "bender",
+   "steps": [
       {
-        image: 'alpine',
-        name: 'greeting',
-        environment: {
-          bye: 'bye',
-          commit: '${DRONE_COMMIT_SHA:0:8}',
-          hello: 'hello all',
-        },
-        commands: [
-          'echo hello',
-          'echo jsonnet',
-          'echo world',
-          'echo $${hello}',
-          'echo $${bye}',
-          'echo $${commit}',
-        ],
-      },
-    ],
-  },
-]
+         "commands": [
+            "echo hello",
+            "echo jsonnet",
+            "echo world",
+            "echo $${hello}",
+            "echo $${bye}",
+            "echo $${commit}"
+         ],
+         "environment": {
+            "bye": "bye",
+            "commit": "${DRONE_COMMIT_SHA:0:8}",
+            "hello": "hello all"
+         },
+         "image": "alpine",
+         "name": "greeting"
+      }
+   ],
+   "type": "kubernetes"
+}
