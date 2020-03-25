@@ -10,6 +10,7 @@
         commands: [
           'echo hello',
           'echo jsonnet',
+          'echo jsonnet',
           'echo world',
         ],
       },
