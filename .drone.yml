@@ -1,24 +1,18 @@
-global:
-  environment: &env
-    hello: "hello all"
-    commit: ${DRONE_COMMIT_SHA:0:8}
-
+---
 kind: pipeline
 type: kubernetes
 name: bender
 
-metadata:
-  namespace: bender
+platform:
+  os: linux
+  arch: amd64
 
 steps:
 - name: greeting
   image: alpine
-  environment:
-    <<: *env
-    bye: "bye"
   commands:
   - echo hello
+  - echo jsonnet
   - echo world
-  - echo $${hello}
-  - echo $${bye}
-  - echo $${commit}
+
+...
