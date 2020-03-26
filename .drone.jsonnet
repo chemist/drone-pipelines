@@ -1,3 +1,5 @@
+local test = import './test.libsonnet';
+
 [
   {
     kind: 'pipeline',
@@ -7,12 +9,13 @@
       {
         name: 'greeting',
         image: 'alpine',
-        commands: [
-          'echo hello',
-          'echo jsonnet',
-          'echo jsonnet',
-          'echo world',
-        ],
+        commands: test.commands,
+        //        commands: [
+        //          'echo hello',
+        //          'echo jsonnet',
+        //          'echo jsonnet',
+        //          'echo world',
+        //        ],
       },
     ],
   },
