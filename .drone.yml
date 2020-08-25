@@ -14,5 +14,6 @@ steps:
   - echo hello
   - echo jsonnet
   - echo world
+  - echo world
 
 ...
